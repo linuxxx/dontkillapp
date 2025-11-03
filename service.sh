@@ -89,13 +89,13 @@ targetTime="4"
 targetTime2="16"
 executedToday=false
 appPackage="com.idormy.sms.forwarder"
-appActivity="com.idormy.sms.forwarder/com.idormy.sms.forwarder.MainActivity"
+appActivity="com.idormy.sms.forwarder/com.idormy.sms.forwarder.activity.MainActivity"
 
 log_magisk "Starting main loop"
 
 # 主循环
 while true; do
-    # 每30分钟执行一次唤醒
+    # 每15分钟执行一次唤醒
     log_magisk "定时唤醒"
     am start -n "$appActivity" >/dev/null 2>&1
     
@@ -123,6 +123,6 @@ while true; do
         fi
     fi
     
-    # 等待30分钟
-    sleep 180
+    # 等待15分钟
+    sleep 900
 done
